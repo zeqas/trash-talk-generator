@@ -1,23 +1,30 @@
 <div class="card-deck">
-  <div class="card">
-    <img src="https://assets-lighthouse.s3.amazonaws.com/uploads/image/file/5668/angry-developer.jpg" class="card-img-top" alt="工程師">
-    <div class="card-body">
-      <label for="engineer">工程師</label>
-      <input type="radio" name="person" id="engineer" value="engineer">
+  
+  <h1 class="title text-center text-info">你想對誰說幹話?</h1>
+  <form action="/" method="POST">
+    <div class="d-flex select-career-section justify-content-between mt-5">
+    
+    {{#each targets}}
+    
+    <div class="card">
+      <label class="form-check-label" for="{{this.id}}">
+        <img src="{{ this.img }}" class="card-img-top" alt="{{ this.title }}">
+        <div class="card-body">
+          <input class="form-check-input" type="radio" name="career" id="{{this.id}}" value="{{this.id}}">
+          {{ this.title }}
+        </label>
+      </div>
     </div>
-  </div>
-  <div class="card">
-    <img src="https://assets-lighthouse.s3.amazonaws.com/uploads/image/file/5667/angry-designer.jpg" class="card-img-top" alt="設計師">
-    <div class="card-body">
-      <h5 class="card-title">設計師</h5>
-      
+
+    {{/each}}
+
+    <div class="container mt-4 generator-section d-flex">
+      <button type="submit" class="btn btn-outline-danger generator-button align-self-start">產生幹話</button>
+      <div class="ml-3 flex-grow-1">
+        <textarea readonly class="form-control trashTalk-display font-weight-bold" rows="3" aria-label="With textarea"
+          style="font-size: larger;">{{#if trashTalk}} {{ trashTalk }} {{else}} 身為一個使用者，動個滑鼠，很容易吧? {{/if}}</textarea>
+      </div>
     </div>
-  </div>
-  <div class="card">
-    <img src="https://assets-lighthouse.s3.amazonaws.com/uploads/image/file/5669/angry-founder.jpg" class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title">創業家</h5>
-      
-    </div>
-  </div>
+
+  </form>
 </div>
