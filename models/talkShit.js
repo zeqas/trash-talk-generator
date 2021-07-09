@@ -1,7 +1,15 @@
-function randomIndex(array) {
-  return Math.floor(Math.random() * array.length)
+const list = require('./shitsData.json')
+
+function sample(array) {
+  const index = Math.floor(Math.random() * array.length)
+  return array[index]
 }
 
-function talkShit (target) {
-  let 
+// define trashTalkGenerator function
+function trashTalkGenerator(target) {
+  if (!target) { return '請選一個角色。' }
+  return `身為一個${list.job[target].title}，${sample(list.task[target])}，${sample(list.phrase)}吧！`
 }
+
+// export trashTalkGenerator
+module.exports = trashTalkGenerator
