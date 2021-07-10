@@ -1,8 +1,8 @@
 {
-  "name": "talKShit_factory",
+  "name": "trashtalk-generator",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "start": "node app.js",
     "dev": "nodemon app.js",
@@ -12,6 +12,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.19.0",
     "express": "^4.17.1",
     "express-handlebars": "^5.3.2"
   }

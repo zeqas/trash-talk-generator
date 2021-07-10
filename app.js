@@ -1,7 +1,7 @@
 const express = require('express')
 const exphbs = require('express-handlebars')
 
-const dataBase = require('./dataBase.json')
+const contents = require('./contents.json')
 const talkShitGenerator = require('./models/talkShit.js')
 
 const app = express()
@@ -13,12 +13,12 @@ app.set('view engine', 'hbs')
 app.use(express.urlencoded({ extended: true }))
 
 app.get('/', (req, res) => {
-  res.render('index', { targets: dataBase.job })
+  res.render('index', { targets: contents.job })
 })
 
 app.post('/', (req, res) => {
   const talkShit = talkShitGenerator(req.body.career)
-  res.render('index', { targets: dataBase.job, talkShit })
+  res.render('index', { targets: contents.job, talkShit })
 })
 
 // listening server
