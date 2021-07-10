@@ -1,4 +1,4 @@
-const contents = require('./contents.json')
+const list = require('./contents.json')
 
 function sample(array) {
   const index = Math.floor(Math.random() * array.length)
@@ -7,7 +7,7 @@ function sample(array) {
 
 function talkShitGenerator(target) {
   if (!target) { return '請選一個角色。' }
-  return `身為一個${contents.job[target].title}，${sample(contents.task[target])}，${sample(contents.phrase)}吧！`
+  return `身為一個${list.job[target].title}，${sample(list.task[target])}，${sample(list.phrase)}吧！`
 }
 
 module.exports = talkShitGenerator
