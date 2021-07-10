@@ -1,6 +1,8 @@
 const express = require('express')
 const exphbs = require('express-handlebars')
+
 const dataBase = require('./shitsData.json')
+const talkShitGenerator = require('./models/talkShit.js')
 
 const app = express()
 const port = 3000
@@ -16,7 +18,7 @@ app.get('/', (req, res) => {
 
 app.post('/', (req, res) => {
   const talkShit = talkShitGenerator(req.body.career)
-  res.render('index', { targets: list.job, targets: dataBase.job })
+  res.render('index', { targets: dataBase.job, talkShit })
 })
 
 // listening server
