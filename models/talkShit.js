@@ -1,4 +1,4 @@
-const dataBase = require('./shitsData.json')
+const dataBase = require('./dataBase.json')
 
 function sample(array) {
   const index = Math.floor(Math.random() * array.length)

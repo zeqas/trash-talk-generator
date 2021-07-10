@@ -1,7 +1,7 @@
 const express = require('express')
 const exphbs = require('express-handlebars')
 
-const dataBase = require('./shitsData.json')
+const dataBase = require('./dataBase.json')
 const talkShitGenerator = require('./models/talkShit.js')
 
 const app = express()
