@@ -1,4 +1,4 @@
-const list = require('./contents.json')
+const list = require('../contents.json')
 
 function sample(array) {
   const index = Math.floor(Math.random() * array.length)
